@@ -6,9 +6,9 @@ package uniandes.cupi2.videotienda.mundo;
  */ 
 public class Copia {
 	
-	 //-----------------------------------------------------------------
-    // Atributos
-    //-----------------------------------------------------------------
+	 	//-----------------------------------------------------------------
+    	// Atributos
+    	//-----------------------------------------------------------------
 
     /**
      * Código de la copia
@@ -44,14 +44,14 @@ public class Copia {
 	}
 	
 	/**
-	 * Retorna el título de la pélicula.
+	 * Retorna el título de la película.
 	 * @return Título de la película.
 	 */
 	public String darTituloPelicula() {
 		
 		return tituloPelicula;
 	}
-	
+
     /**
      * Compara esta copia con otra para saber si son iguales (mismo código y misma película).
      * @param otra La otra copia a comparar. otra != null.
@@ -62,5 +62,4 @@ public class Copia {
 				tituloPelicula.equals(otra.darTituloPelicula());
 	}
 	
-
 }
