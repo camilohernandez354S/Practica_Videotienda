@@ -55,6 +55,9 @@ public class VideoTienda
     public VideoTienda( int unaTarifa )
     {
     	//TODO implementar inicializando los atributos
+    	tarifaDiaria = unaTarifa;
+        clientes = new ArrayList<Cliente>();
+        catalogo = new ArrayList<Pelicula>();
     }
 
     //-----------------------------------------------------------------
