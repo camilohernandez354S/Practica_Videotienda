@@ -14,7 +14,7 @@ package uniandes.cupi2.videotienda.mundo;
 
 import java.util.ArrayList;
 
-import uniandes.cupi2.videotienda.mundo.Copia
+import uniandes.cupi2.videotienda.mundo.Copia;
 
 
 /**
