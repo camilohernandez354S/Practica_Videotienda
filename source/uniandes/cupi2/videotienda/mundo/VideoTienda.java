@@ -126,6 +126,11 @@ public class VideoTienda
     public void afiliarCliente( String cedula, String nombre, String direccion ) throws Exception
     {
     	//TODO implementar
+    	if (buscarCliente(cedula) != null) {
+            throw new Exception("Ya existe un cliente con esa cédula.");
+        }
+        Cliente nuevoCliente = new Cliente(cedula, nombre, direccion);
+        clientes.add(nuevoCliente);
     }
     
     /**
