@@ -141,6 +141,12 @@ public class VideoTienda
     public Cliente buscarCliente( String cedula )
     {
     	//TODO implementar
+    	for (Cliente c : clientes) {
+            if (c.darCedula().equals(cedula)) {
+                return c;
+            }
+        }
+        return null;
     }
 
 
