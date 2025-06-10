@@ -13,6 +13,8 @@
 
 package uniandes.cupi2.videotienda.mundo;
 
+import java.util.ArrayList;
+
 /**
  * clase representa un cliente de la videotienda.
  */
@@ -141,9 +143,9 @@ public class Cliente {
      * @throws Exception si el cliente no tiene alquilada esa copia.
      */
     public Copia devolverCopia(String titulo, int numeroCopia) throws Exception {
-        for (int i = 0; i < copiasAlquiladas.size(); i++) {
+    	for (int i = 0; i < copiasAlquiladas.size(); i++) {
             Copia c = copiasAlquiladas.get(i);
-            if (c.darCodigo() == numeroCopia && c.darPelicula().darTitulo().equals(titulo)) {
+            if (c.darCodigo() == numeroCopia && c.darTituloPelicula().equals(titulo)) {
                 copiasAlquiladas.remove(i);
                 return c;
             }
