@@ -175,9 +175,25 @@ public class VideoTienda
      * @throws Exception Si no hay copias disponibles.
      * @throws Exception Si el saldo del cliente no es suficiente para el alquiler.
      */
-    public int alquilarPelicula( String titulo, String cedula ) throws Exception
-    {
-    	//TODO implementar
+    public void alquilarPelicula(String titulo, String cedula) throws Exception {
+        Cliente cliente = buscarCliente(cedula);
+        Pelicula pelicula = buscarPelicula(titulo);
+
+        if (cliente == null) {
+            throw new Exception("Cliente no encontrado.");
+        }
+
+        if (pelicula == null) {
+            throw new Exception("Película no encontrada.");
+        }
+
+        Copia copia = pelicula.alquilarCopia();
+        if (copia == null) {
+            throw new Exception("No hay copias disponibles de la película.");
+        }
+
+        cliente.alquilarCopia(copia);
+        cliente.descargarSaldo(tarifaDiaria);
     }
 
     /**
@@ -189,14 +205,18 @@ public class VideoTienda
      * @throws Exception Si el cliente no existe.
      * @throws Exception Si el cliente no tiene la copia alquilada.
      */
-    public void devolverCopia( String titulo, int numeroCopia, String cedula ) throws Exception
-    {
-    	//TODO implementar
+    public void devolverCopia(String titulo, int numeroCopia, String cedula) throws Exception {
+        Cliente cliente = buscarCliente(cedula);
+        if (cliente == null) {
+            throw new Exception("Cliente no encontrado.");
+        }
 
+        Copia copia = cliente.devolverCopia(titulo, numeroCopia);
+        Pelicula pelicula = buscarPelicula(titulo);
+        if (pelicula != null) {
+            pelicula.devolverCopia(copia.darCodigo());
+        }
     }
-
-
-
 
 
     /**
@@ -204,12 +224,18 @@ public class VideoTienda
      * @return ArrayList la lista de clientes
      */
     //TODO Definir la signatura del m�todo de acuerdo a la documentaci�n e implementarlo.
+    public ArrayList<Cliente> darListaClientes() {
+        return clientes;
+    }
 
     /**
      * Retorna el cat�logo de pel�culas de la videotienda
      * @return lista de pel�culas existentes. lista != null.
      */
     //TODO Definir la signatura del m�todo de acuerdo a la documentaci�n e implementarlo.
+    public ArrayList<Pelicula> darCatalogo() {
+        return catalogo;
+    }
 
     //-----------------------------------------------------------------
     // Puntos de Extensi�n
