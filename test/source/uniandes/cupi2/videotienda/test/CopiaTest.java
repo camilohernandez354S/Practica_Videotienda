@@ -1,8 +1,8 @@
 /**
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
  * $Id: CopiaTest.java,v 1.1 2005/12/16 15:13:33 k-marcos Exp $ 
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación 
+ * Universidad de los Andes (Bogotï¿½ - Colombia)
+ * Departamento de Ingenierï¿½a de Sistemas y Computaciï¿½n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
@@ -37,16 +37,16 @@ public class CopiaTest extends TestCase
     private Copia copia2;
 
     /**
-     * La película 1 de prueba
+     * La pelï¿½cula 1 de prueba
      */
     private String tituloPelicula1;
 
     /**
-     * La película 2 de prueba
+     * La pelï¿½cula 2 de prueba
      */
     private String tituloPelicula2;
     //-----------------------------------------------------------------
-    // Métodos
+    // Mï¿½todos
     //-----------------------------------------------------------------
 
     /**
@@ -54,44 +54,44 @@ public class CopiaTest extends TestCase
      */
     private void setupEscenario1( )
     {
-        tituloPelicula1 = "Retroceder nunca, rendirse jamás XVII";
-        copia1 = new Copia( tituloPelicula1, 1 );
+        tituloPelicula1 = "Retroceder nunca, rendirse jamÃ¡s XVII";
+        copia1 = new Copia(1, tituloPelicula1);
         tituloPelicula2 = "El Gran Pez";
-        copia2 = new Copia( tituloPelicula2, 2 );
+        copia2 = new Copia(2, tituloPelicula2);
     }
     /**
-     * Verificar el método darConsecutivo
+     * Verificar el mï¿½todo darConsecutivo
      */
     public void testDarCodigo( )
     {
         setupEscenario1( );
 
-        assertEquals( "El consecutivo está equivocado", 1, copia1.darCodigo( ) );
-        assertEquals( "El consecutivo está equivocado", 2, copia2.darCodigo( ) );
+        assertEquals( "El consecutivo estï¿½ equivocado", 1, copia1.darCodigo( ) );
+        assertEquals( "El consecutivo estï¿½ equivocado", 2, copia2.darCodigo( ) );
     }
 
     /**
-     * Valida el método que retorna el título de la película de una copia
+     * Valida el mï¿½todo que retorna el tï¿½tulo de la pelï¿½cula de una copia
      */
     public void testDarTituloPelicula( )
     {
         setupEscenario1( );
 
         String t = copia1.darTituloPelicula( );
-        assertEquals( "El título de la película 1 es incorrecto", tituloPelicula1, t );
+        assertEquals( "El tï¿½tulo de la pelï¿½cula 1 es incorrecto", tituloPelicula1, t );
         String t2 = copia2.darTituloPelicula( );
-        assertEquals( "El título de la película 2 es incorrecto", tituloPelicula2, t2 );
+        assertEquals( "El tï¿½tulo de la pelï¿½cula 2 es incorrecto", tituloPelicula2, t2 );
     }
 
     /**
-     * Valida el método de comparación entre copias
+     * Valida el mï¿½todo de comparaciï¿½n entre copias
      */
     public void testEsIgualA( )
     {
         setupEscenario1( );
 
         assertFalse( copia1.esIgualA( copia2 ) );
-        Copia otra = new Copia( copia1.darTituloPelicula( ), copia1.darCodigo( ) );
+        Copia otra = new Copia( copia1.darCodigo(), copia1.darTituloPelicula() );
         assertTrue( copia1.esIgualA( otra ) );
     }
 }

@@ -30,9 +30,12 @@ public class Copia {
      * @param elCodigo Código único de la copia. elCodigo > 0.
      * @param laPelicula Título de la película. laPelicula != null.
      */
-	public Copia( int elCodigo, String laPelicula) {
-		codigo = elCodigo;
-		tituloPelicula = laPelicula;
+	public Copia(int elCodigo, String laPelicula) {
+	    if (elCodigo <= 0 || laPelicula == null) {
+	        throw new IllegalArgumentException("Código debe ser positivo y título no puede ser null");
+	    }
+	    codigo = elCodigo;
+	    tituloPelicula = laPelicula;
 	}
 	
 	/**

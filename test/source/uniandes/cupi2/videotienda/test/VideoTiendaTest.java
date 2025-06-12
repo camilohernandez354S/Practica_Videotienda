@@ -13,7 +13,6 @@
 package uniandes.cupi2.videotienda.test;
 
 import java.util.ArrayList;
-
 import junit.framework.TestCase;
 import uniandes.cupi2.videotienda.mundo.Cliente;
 import uniandes.cupi2.videotienda.mundo.Copia;
@@ -30,6 +29,7 @@ public class VideoTiendaTest extends TestCase
     // Atributos
     //-----------------------------------------------------------------
 
+	
     /**
      * Videotienda de prueba
      */
@@ -59,12 +59,6 @@ public class VideoTiendaTest extends TestCase
      * Tarifa diaria de prueba
      */
     private int tarifa;
-    
-    /*
-     *  
-     */
-    private Videotienda videotienda;
-
 
     //-----------------------------------------------------------------
     // M�todos
@@ -75,7 +69,6 @@ public class VideoTiendaTest extends TestCase
      */
     private void setupEscenario1( )
     {
-    	videotienda = new Videotienda();
         tarifa = 6000;
         try
         {
@@ -150,7 +143,7 @@ public class VideoTiendaTest extends TestCase
     public void testCargaCatalogo( )
     {
         setupEscenario1( );
-        ArrayList catalogo = videotienda.darCatalogo( );
+        ArrayList<Pelicula> catalogo = videotienda.darCatalogo();
         assertEquals( 10, catalogo.size( ) );
         pelicula1 = ( Pelicula )catalogo.get( 0 );
         assertEquals( "El senor de Los anillos I", pelicula1.darTitulo( ) );
@@ -217,7 +210,7 @@ public class VideoTiendaTest extends TestCase
     {
         setupEscenario2( );
 
-        ArrayList clientes = videotienda.darListaClientes( );
+        ArrayList<Cliente> clientes = videotienda.darListaClientes();
         assertEquals( 2, clientes.size( ) );
         Cliente c = ( Cliente )clientes.get( 0 );
         assertEquals( cliente1.darCedula( ), c.darCedula( ) );

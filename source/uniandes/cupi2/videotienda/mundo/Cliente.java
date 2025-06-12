@@ -23,7 +23,8 @@ public class Cliente {
 	//-----------------------------------------------------------------
     // Atributos
     //-----------------------------------------------------------------
-
+	
+	
     /**
      * Cédula del cliente
      */
@@ -154,7 +155,7 @@ public class Cliente {
      * @return La copia que coincide con el título y el código, o null si no se encuentra.
      */
     public Copia buscarPeliculaAlquilada(String pelicula, int codigo) {
-        for (Copia c : Alquiladas) {
+        for (Copia c : copiasAlquiladas) {
             if (c.darTituloPelicula().equals(pelicula) && c.darCodigo() == codigo) {
                 return c;
             }

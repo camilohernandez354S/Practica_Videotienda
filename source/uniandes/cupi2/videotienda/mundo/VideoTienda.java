@@ -31,12 +31,6 @@ public class VideoTienda
      * Tarifa de alquiler diario
      */
     private double tarifaDiaria;
-    
-    /**
-     * Lista de todas las películas disponibles en la videotienda.
-     * Cada película puede tener una o más copias para alquilar.
-     */
-    private ArrayList<Pelicula> peliculas;
 
 
     /**
