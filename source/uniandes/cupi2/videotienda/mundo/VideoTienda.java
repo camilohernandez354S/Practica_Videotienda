@@ -30,7 +30,14 @@ public class VideoTienda
     /**
      * Tarifa de alquiler diario
      */
-    private int tarifaDiaria;
+    private double tarifaDiaria;
+    
+    /**
+     * Lista de todas las películas disponibles en la videotienda.
+     * Cada película puede tener una o más copias para alquilar.
+     */
+    private ArrayList<Pelicula> peliculas;
+
 
     /**
      * Clientes
@@ -148,8 +155,50 @@ public class VideoTienda
         }
         return null;
     }
-
-
+    
+    
+    /**
+     * Busca una película en la videotienda por su título.
+     *
+     * @param titulo Título de la película que se desea buscar. No debe ser null.
+     * @return La película que coincide con el título, o null si no se encuentra.
+     */
+    public Pelicula buscarPelicula(String titulo) {
+        for (Pelicula p : peliculas) {
+            if (p.darTitulo().equalsIgnoreCase(titulo)) {
+                return p;
+            }
+        }
+        return null;
+    }
+    
+    /**
+     * Modifica la tarifa diaria de alquiler de películas en la videotienda.
+     * 
+     * @param nuevaTarifa La nueva tarifa a establecer. Debe ser mayor que 0.
+     * @throws Exception Si la tarifa es menor o igual a 0.
+     */
+    public void modificarTarifa(double unaTarifa) throws Exception {
+        if (unaTarifa <= 0) {
+            throw new Exception("La tarifa debe ser mayor que cero.");
+        }
+        tarifaDiaria = unaTarifa;
+    }
+    
+    /**
+     * Agrega una nueva copia a una película existente en la videotienda.
+     * 
+     * @param titulo Título de la película a la cual se desea agregar la copia. titulo != null.
+     * @return Código de la copia agregada.
+     * @throws Exception Si no se encuentra una película con ese título.
+     */
+    public int agregarCopiaPelicula(String titulo) throws Exception {
+        Pelicula pelicula = buscarPelicula(titulo);
+        if (pelicula == null) {
+            throw new Exception("Película no encontrada.");
+        }
+        return pelicula.agregarCopia();
+    }
 
     /**
      * Adiciona el monto dado al saldo disponible del cliente. <br>
@@ -162,6 +211,10 @@ public class VideoTienda
     public void cargarSaldoCliente( String cedula, int monto ) throws Exception
     {
     	//TODO implementar
+    	Cliente c = buscarCliente(cedula);
+        if (c != null) {
+            c.descargarSaldo(monto);
+        }
     }
 
     /**
@@ -175,9 +228,9 @@ public class VideoTienda
      * @throws Exception Si no hay copias disponibles.
      * @throws Exception Si el saldo del cliente no es suficiente para el alquiler.
      */
-    public void alquilarPelicula(String titulo, String cedula) throws Exception {
-        Cliente cliente = buscarCliente(cedula);
-        Pelicula pelicula = buscarPelicula(titulo);
+    public int alquilarPelicula(String nombrePelicula, String nombreCliente) throws Exception {
+        Cliente cliente = buscarCliente(nombreCliente);
+        Pelicula pelicula = buscarPelicula(nombrePelicula);
 
         if (cliente == null) {
             throw new Exception("Cliente no encontrado.");
@@ -194,7 +247,10 @@ public class VideoTienda
 
         cliente.alquilarCopia(copia);
         cliente.descargarSaldo(tarifaDiaria);
+
+        return copia.darCodigo();
     }
+
 
     /**
      * Devuelve a la videotienda una copia alquilada por el cliente identificado con la c�dula dada. <br>

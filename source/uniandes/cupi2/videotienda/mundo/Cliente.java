@@ -86,6 +86,15 @@ public class Cliente {
     public String darNombre() {
         return nombre;
     }
+    
+    /**
+     * Descarga o descuenta un valor del saldo actual del cliente.
+     *
+     * @param valor Monto que se debe descontar del saldo. Debe ser mayor a 0.
+     */
+    public void descargarSaldo(double valor) {
+        saldo -= valor;
+    }
 
     /**
      * Retorna la dirección del cliente.
@@ -107,7 +116,7 @@ public class Cliente {
      * Retorna las copias alquiladas por el cliente.
      * @return lista de copias alquiladas.
      */
-    public ArrayList<Copia> darCopiasAlquiladas() {
+    public ArrayList<Copia> darAlquiladas() {
         return copiasAlquiladas;
     }
 
