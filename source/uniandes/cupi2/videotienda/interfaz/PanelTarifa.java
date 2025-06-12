@@ -1,8 +1,8 @@
 /**
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
  * $Id: PanelTarifa.java,v 1.1 2005/12/16 15:13:33 k-marcos Exp $ 
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación 
+ * Universidad de los Andes (Bogotï¿½ - Colombia)
+ * Departamento de Ingenierï¿½a de Sistemas y Computaciï¿½n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
@@ -42,7 +42,7 @@ public class PanelTarifa extends JPanel implements ActionListener
     //-----------------------------------------------------------------
 
     /**
-     * Ventana principal de la aplicación
+     * Ventana principal de la aplicaciÃ³n
      */
     private InterfazVideotienda ventanaPrincipal;
 
@@ -61,7 +61,7 @@ public class PanelTarifa extends JPanel implements ActionListener
     private JTextField campoTarifa;
 
     /**
-     * Botón para cambiar la tarifa
+     * BotÃ³n para cambiar la tarifa
      */
     private JButton botonTarifa;
 
@@ -71,7 +71,7 @@ public class PanelTarifa extends JPanel implements ActionListener
 
     /**
      * Crea el panel para el manejo de la tarifa
-     * @param interfaz Ventana principal de la aplicación. interfaz != null.
+     * @param interfaz Ventana principal de la aplicaciÃ³n. interfaz != null.
      */
     public PanelTarifa( InterfazVideotienda interfaz )
     {
@@ -103,7 +103,7 @@ public class PanelTarifa extends JPanel implements ActionListener
     
     /**
      * Responde a los eventos de los botones del panel
-     * @param evento Evento generado por un botón. evento != null.
+     * @param evento Evento generado por un botÃ³n. evento != null.
      */
     public void actionPerformed( ActionEvent evento )
     {

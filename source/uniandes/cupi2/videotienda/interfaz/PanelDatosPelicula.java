@@ -1,8 +1,8 @@
 /**
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
  * $Id: PanelDatosPelicula.java,v 1.1 2005/12/16 15:13:33 k-marcos Exp $ 
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación 
+ * Universidad de los Andes (Bogotï¿½ - Colombia)
+ * Departamento de Ingenierï¿½a de Sistemas y Computaciï¿½n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
@@ -25,7 +25,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
- * Panel para presentar los datos de una película
+ * Panel para presentar los datos de una pelÃ­cula
  */
 public class PanelDatosPelicula extends JPanel implements ActionListener
 {
@@ -43,7 +43,7 @@ public class PanelDatosPelicula extends JPanel implements ActionListener
     //-----------------------------------------------------------------
 
     /**
-     * Diálogo donde se ubica el panel
+     * DiÃ¡logo donde se ubica el panel
      */
     private DialogoPelicula dialogo;
 
@@ -64,19 +64,19 @@ public class PanelDatosPelicula extends JPanel implements ActionListener
     //-----------------------------------------------------------------
 
     /**
-     * Crea el panel para los datos de una película
-     * @param elDialogo Diálogo donde se ubica el panel. elDialogo != null.
+     * Crea el panel para los datos de una pelÃ­cula
+     * @param elDialogo DiÃ¡logo donde se ubica el panel. elDialogo != null.
      */
     public PanelDatosPelicula( DialogoPelicula elDialogo )
     {
         dialogo = elDialogo;
 
-        setBorder( BorderFactory.createTitledBorder( "Datos Básicos" ) );
+        setBorder( BorderFactory.createTitledBorder( "Datos BÃ¡sicos" ) );
         setLayout( new BorderLayout( ) );
 
-        labTitulo = new JLabel( "Título de la película:" );
-        labDisponibles = new JLabel( "Número Copias Disponibles:" );
-        labPrestadas = new JLabel( "Número Copias Prestadas:" );
+        labTitulo = new JLabel( "TÃ­tulo de la pelÃ­cula:" );
+        labDisponibles = new JLabel( "NÃºmero Copias Disponibles:" );
+        labPrestadas = new JLabel( "NÃºmero Copias Prestadas:" );
         txtTitulo = new JTextField( dialogo.darTitulo( ) );
         txtTitulo.setEditable( false );
         txtDisponibles = new JTextField( "" + dialogo.darNumeroDisponibles( ) );
@@ -103,12 +103,12 @@ public class PanelDatosPelicula extends JPanel implements ActionListener
     }
 
     //-----------------------------------------------------------------
-    // Métodos
+    // MÃ©todos
     //-----------------------------------------------------------------
 
     /**
      * Responde a los eventos de los botones del panel
-     * @param evento Evento generado por un botón. evento != null.
+     * @param evento Evento generado por un botÃ³n. evento != null.
      */
     public void actionPerformed( ActionEvent evento )
     {

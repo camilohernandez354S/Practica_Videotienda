@@ -1,8 +1,8 @@
 /**
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
  * $Id: DialogoConsultaCliente.java,v 1.1 2005/12/16 15:13:33 k-marcos Exp $ 
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación 
+ * Universidad de los Andes (Bogotï¿½ - Colombia)
+ * Departamento de Ingenierï¿½a de Sistemas y Computaciï¿½n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
@@ -21,7 +21,7 @@ import javax.swing.JOptionPane;
 import uniandes.cupi2.videotienda.mundo.Cliente;
 
 /**
- * Diálogo para mostrar los datos de un cliente
+ * DiÃ¡logo para mostrar los datos de un cliente
  */
 public class DialogoConsultaCliente extends JDialog
 {
@@ -30,7 +30,7 @@ public class DialogoConsultaCliente extends JDialog
     //-----------------------------------------------------------------
 
     /**
-     * Ventana principal de la aplicación
+     * Ventana principal de la aplicaciÃ³n
      */
     private InterfazVideotienda ventanaPrincipal;
 
@@ -45,12 +45,12 @@ public class DialogoConsultaCliente extends JDialog
     private PanelDatosCliente panelDatos;
 
     /**
-     * Panel con los datos de las películas alquiladas del cliente
+     * Panel con los datos de las pelÃ­culas alquiladas del cliente
      */
     private PanelAlquiladasCliente panelAlquiladas;
 
     /**
-     * Panel con las opciones del diálogo
+     * Panel con las opciones del diÃ¡logo
      */
     private PanelBotonesCliente panelBotones;
 
@@ -58,9 +58,9 @@ public class DialogoConsultaCliente extends JDialog
     // Constructores
     //-----------------------------------------------------------------
     /**
-     * Crea el diálogo para mostrar la información del cliente dado
+     * Crea el diÃ¡logo para mostrar la informaciÃ³n del cliente dado
      * @param elCliente Cliente a mostrar. elCliente != null.
-     * @param ventana Ventana principal de la aplicación. ventana != null.
+     * @param ventana Ventana principal de la aplicaciÃ³n. ventana != null.
      */
     public DialogoConsultaCliente( Cliente elCliente, InterfazVideotienda ventana )
     {
@@ -77,11 +77,11 @@ public class DialogoConsultaCliente extends JDialog
         add( panelBotones, BorderLayout.SOUTH );
 
         pack( );
-        setTitle( "Información del Cliente" );
+        setTitle( "InformaciÃ³n del Cliente" );
     }
 
     //-----------------------------------------------------------------
-    // Métodos
+    // MÃ©todos
     //-----------------------------------------------------------------
 
     /**
@@ -94,8 +94,8 @@ public class DialogoConsultaCliente extends JDialog
     }
 
     /**
-     * Retorna la cédula del cliente
-     * @return cédula
+     * Retorna la cÃ©dula del cliente
+     * @return cÃ©dula
      */
     public String darCedula( )
     {
@@ -103,8 +103,8 @@ public class DialogoConsultaCliente extends JDialog
     }
 
     /**
-     * Retorna la dirección del cliente
-     * @return dirección
+     * Retorna la direcciÃ³n del cliente
+     * @return direcciÃ³n
      */
     public String darDireccion( )
     {
@@ -130,9 +130,9 @@ public class DialogoConsultaCliente extends JDialog
     }
 
     /**
-     * Devuelve la película seleccionada
-     * @param pelicula Título de la película. pelicula != null.
-     * @param copia Copia de la película.
+     * Devuelve la pelÃ­cula seleccionada
+     * @param pelicula TÃ­tulo de la pelÃ­cula. pelicula != null.
+     * @param copia Copia de la pelÃ­cula.
      */
     public void devolver( String pelicula, int copia )
     {
@@ -143,11 +143,11 @@ public class DialogoConsultaCliente extends JDialog
         }
         catch( Exception e )
         {
-            JOptionPane.showMessageDialog( this, e.getMessage( ), "Devolver Película", JOptionPane.ERROR_MESSAGE );
+            JOptionPane.showMessageDialog( this, e.getMessage( ), "Devolver PelÃ­cula", JOptionPane.ERROR_MESSAGE );
         }
     }
     /**
-     * Sale del diálogo
+     * Sale del diÃ¡logo
      */
     public void aceptar( )
     {

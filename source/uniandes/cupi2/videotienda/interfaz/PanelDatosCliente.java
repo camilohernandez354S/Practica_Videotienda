@@ -1,8 +1,8 @@
 /**
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
  * $Id: PanelDatosCliente.java,v 1.1 2005/12/16 15:13:33 k-marcos Exp $ 
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación 
+ * Universidad de los Andes (Bogotï¿½ - Colombia)
+ * Departamento de Ingenierï¿½a de Sistemas y Computaciï¿½n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
@@ -44,7 +44,7 @@ public class PanelDatosCliente extends JPanel implements ActionListener
     //-----------------------------------------------------------------
 
     /**
-     * Diálogo donde se ubica el panel
+     * DiÃ¡logo donde se ubica el panel
      */
     private DialogoConsultaCliente dialogo;
 
@@ -67,7 +67,7 @@ public class PanelDatosCliente extends JPanel implements ActionListener
 
     /**
      * Crea el panel para los datos de un cliente
-     * @param elDialogo Diálogo donde se ubica el panel. elDialogo != null.
+     * @param elDialogo DiÃ¡logo donde se ubica el panel. elDialogo != null.
      */
     public PanelDatosCliente( DialogoConsultaCliente elDialogo )
     {
@@ -77,8 +77,8 @@ public class PanelDatosCliente extends JPanel implements ActionListener
         setLayout( new BorderLayout( ) );
 
         labNombre = new JLabel( "Nombre:" );
-        labCedula = new JLabel( "Cédula:" );
-        labDireccion = new JLabel( "Dirección:" );
+        labCedula = new JLabel( "CÃ©dula:" );
+        labDireccion = new JLabel( "DirecciÃ³n:" );
         labSaldo = new JLabel( "Saldo:" );
         txtNombre = new JTextField( dialogo.darNombre( ) );
         txtNombre.setEditable( false );
@@ -114,12 +114,12 @@ public class PanelDatosCliente extends JPanel implements ActionListener
     }
 
     //-----------------------------------------------------------------
-    // Métodos
+    // MÃ©todos
     //-----------------------------------------------------------------
 
     /**
      * Responde a los eventos de los botones del panel
-     * @param evento Evento generado por un botón. evento != null.
+     * @param evento Evento generado por un botÃ³n. evento != null.
      */
     public void actionPerformed( ActionEvent evento )
     {
