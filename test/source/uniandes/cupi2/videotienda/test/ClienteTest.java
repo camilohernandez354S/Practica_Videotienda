@@ -1,8 +1,8 @@
 /**
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
  * $Id: ClienteTest.java,v 1.1 2005/12/16 15:13:33 k-marcos Exp $ 
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación 
+ * Universidad de los Andes (Bogotï¿½ - Colombia)
+ * Departamento de Ingenierï¿½a de Sistemas y Computaciï¿½n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
@@ -38,17 +38,17 @@ public class ClienteTest extends TestCase
     private String nombre;
 
     /**
-     * Cédula del cliente de prueba
+     * Cï¿½dula del cliente de prueba
      */
     private String cedula;
 
     /**
-     * dirección del cliente de prueba
+     * direcciï¿½n del cliente de prueba
      */
     private String direccion;
 
     /**
-     * Título de la película de prueba
+     * Tï¿½tulo de la pelï¿½cula de prueba
      */
     private String titulo;
 
@@ -63,34 +63,34 @@ public class ClienteTest extends TestCase
     private Copia copia2;
 
     //-----------------------------------------------------------------
-    // Métodos
+    // Mï¿½todos
     //-----------------------------------------------------------------
 
     /**
-     * Prepara el escenario 1 con un cliente y una película con dos copias disponibles
+     * Prepara el escenario 1 con un cliente y una pelicula con dos copias disponibles
      */
     private void setupEscenario1( )
     {
-        nombre = "Pedro Pérez";
+        nombre = "Pedro Perez";
         cedula = "1234567";
         direccion = "cll 1 # 1a01";
         cliente = new Cliente( cedula, nombre, direccion );
 
-        titulo = "Retroceder nunca, rendirse jamás XVII";
+        titulo = "Retroceder nunca, rendirse jamas XVII";
     }
 
     private void setupEscenario2( )
     {
         setupEscenario1( );
 
-        copia1 = new Copia( titulo, 1 );
-        copia2 = new Copia( titulo, 2 );
+        copia1 = new Copia(1, titulo);
+        copia2 = new Copia(2, titulo);
 
         cliente.alquilarCopia( copia1 );
     }
 
     /**
-     * Prueba la creación básica de un cliente de la videotienda
+     * Prueba la creaciÃ³n basica de un cliente de la videotienda
      */
     public void testCreacionCliente( )
     {
@@ -101,7 +101,7 @@ public class ClienteTest extends TestCase
         assertEquals( direccion, cliente.darDireccion( ) );
         assertEquals( 0, cliente.darSaldo( ) );
         assertEquals( 0, cliente.darAlquiladas( ).size( ) );
-        assertEquals( 0, cliente.darNumeroAlquiladas( ) );
+        assertEquals( 0, cliente.darAlquiladas( ) );
     }
 
     /**
@@ -136,10 +136,10 @@ public class ClienteTest extends TestCase
         setupEscenario2( );
 
         assertEquals( 1, cliente.darAlquiladas( ).size( ) );
-        assertEquals( 1, cliente.darNumeroAlquiladas( ) );
+        assertEquals( 1, cliente.darAlquiladas( ) );
         cliente.alquilarCopia( copia2 );
         assertEquals( 2, cliente.darAlquiladas( ).size( ) );
-        assertEquals( 2, cliente.darNumeroAlquiladas( ) );
+        assertEquals( 2, cliente.darAlquiladas( ) );
 
         Copia c = ( Copia )cliente.darAlquiladas( ).get( 0 );
         assertTrue( c.esIgualA( copia1 ) );
@@ -149,49 +149,49 @@ public class ClienteTest extends TestCase
     }
 
     /**
-     * Prueba la búsqueda de copias en la lista de alquiladas
+     * Prueba la bï¿½squeda de copias en la lista de alquiladas
      */
     public void testBuscarCopiaAlquilada( )
     {
         setupEscenario2( );
 
-        //Busca una copia que está en las alquiladas
+        //Busca una copia que estï¿½ en las alquiladas
         Copia c = cliente.buscarPeliculaAlquilada( titulo, copia1.darCodigo( ) );
         assertEquals( titulo, c.darTituloPelicula( ) );
 
-        //Busca una copia que no está en las alquiladas
+        //Busca una copia que no estï¿½ en las alquiladas
         c = cliente.buscarPeliculaAlquilada( titulo, copia2.darCodigo( ) );
         assertNull( c );
 
     }
 
     /**
-     * Prueba la devolución de una copia alquilada
+     * Prueba la devoluciï¿½n de una copia alquilada
      */
     public void testDevolverCopia( )
     {
         setupEscenario2( );
 
-        //Devuelve una copia que si está alquilada
+        //Devuelve una copia que si estï¿½ alquilada
         try
         {
             cliente.devolverCopia( titulo, copia1.darCodigo( ) );
-            assertEquals( 0, cliente.darNumeroAlquiladas( ) );
+            assertEquals( 0, cliente.darAlquiladas( ) );
         }
         catch( Exception e )
         {
-            fail( "Esta copia debería estar alquilada y así dejarse devolver" );
+            fail( "Esta copia deberï¿½a estar alquilada y asï¿½ dejarse devolver" );
         }
 
-        //Devuelve una copia que no está alquilada
+        //Devuelve una copia que no estï¿½ alquilada
         try
         {
             cliente.devolverCopia( titulo, copia2.darCodigo( ) );
-            fail( "Esta copia no está alquilada y no se puede devolver" );
+            fail( "Esta copia no estï¿½ alquilada y no se puede devolver" );
         }
         catch( Exception e2 )
         {
-            assertTrue( "Esta copia no debería estar alquilada y por lo tanto se espera la excepción", true );
+            assertTrue( "Esta copia no deberï¿½a estar alquilada y por lo tanto se espera la excepciï¿½n", true );
         }
     }
 }

@@ -11,10 +11,7 @@
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
  */
 package uniandes.cupi2.videotienda.mundo;
-
 import java.util.ArrayList;
-
-import uniandes.cupi2.videotienda.mundo.Copia;
 
 
 /**
@@ -61,8 +58,8 @@ public class Pelicula
     {
     	//TODO implementar inicializando los atributos
     	titulo = unTitulo;
-    	disponibles = new ArrayList();
-    	prestadas = new ArrayList();
+    	disponibles = new ArrayList<Copia>();
+    	prestadas = new ArrayList<Copia>();
     	codigoSiguienteCopia = 1;
     	
     }

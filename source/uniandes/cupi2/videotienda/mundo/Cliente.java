@@ -111,6 +111,16 @@ public class Cliente {
     public int darSaldo() {
         return saldo;
     }
+    
+    /**
+     * Aumenta el saldo disponible del cliente en la cantidad especificada.
+     * 
+     * @param monto Monto a cargar al saldo. monto > 0.
+     */
+    public void cargarSaldo(int monto) {
+        saldo += monto;
+    }
+
 
     /**
      * Retorna las copias alquiladas por el cliente.
@@ -135,6 +145,23 @@ public class Cliente {
     public void descontarSaldo(int monto) {
         saldo -= monto;
     }
+    
+    /**
+     * Busca una copia alquilada por el cliente que coincida con el título de la película y el código de la copia.
+     * 
+     * @param pelicula Título de la película que se desea buscar. pelicula != null.
+     * @param codigo Código de la copia que se desea buscar.
+     * @return La copia que coincide con el título y el código, o null si no se encuentra.
+     */
+    public Copia buscarPeliculaAlquilada(String pelicula, int codigo) {
+        for (Copia c : Alquiladas) {
+            if (c.darTituloPelicula().equals(pelicula) && c.darCodigo() == codigo) {
+                return c;
+            }
+        }
+        return null;
+    }
+
 
     /**
      * Alquila una copia para el cliente.
