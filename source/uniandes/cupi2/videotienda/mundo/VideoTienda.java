@@ -164,7 +164,7 @@ public class VideoTienda
      * @return La película que coincide con el título, o null si no se encuentra.
      */
     public Pelicula buscarPelicula(String titulo) {
-        for (Pelicula p : peliculas) {
+        for (Pelicula p : catalogo) {
             if (p.darTitulo().equalsIgnoreCase(titulo)) {
                 return p;
             }

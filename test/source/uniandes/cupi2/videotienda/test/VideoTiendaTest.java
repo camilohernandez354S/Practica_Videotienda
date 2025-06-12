@@ -1,8 +1,8 @@
 /**
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
  * $Id: VideoTiendaTest.java,v 1.1 2005/12/16 15:13:33 k-marcos Exp $ 
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación 
+ * Universidad de los Andes (Bogotï¿½ - Colombia)
+ * Departamento de Ingenierï¿½a de Sistemas y Computaciï¿½n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
@@ -46,12 +46,12 @@ public class VideoTiendaTest extends TestCase
     private Cliente cliente2;
 
     /**
-     * Película 1 de prueba
+     * Pelï¿½cula 1 de prueba
      */
     private Pelicula pelicula1;
 
     /**
-     * Película 2 de prueba
+     * Pelï¿½cula 2 de prueba
      */
     private Pelicula pelicula2;
 
@@ -59,16 +59,23 @@ public class VideoTiendaTest extends TestCase
      * Tarifa diaria de prueba
      */
     private int tarifa;
+    
+    /*
+     *  
+     */
+    private Videotienda videotienda;
+
 
     //-----------------------------------------------------------------
-    // Métodos
+    // Mï¿½todos
     //-----------------------------------------------------------------
 
     /**
-     * Establece la tarifa, crea la videotienda y la carga con las películas de prueba
+     * Establece la tarifa, crea la videotienda y la carga con las pelï¿½culas de prueba
      */
     private void setupEscenario1( )
     {
+    	videotienda = new Videotienda();
         tarifa = 6000;
         try
         {
@@ -115,7 +122,7 @@ public class VideoTiendaTest extends TestCase
         }
         catch( Exception e )
         {
-            fail( "Debió incrementar el saldo sin problemas" );
+            fail( "Debiï¿½ incrementar el saldo sin problemas" );
         }
     }
 
@@ -133,12 +140,12 @@ public class VideoTiendaTest extends TestCase
         }
         catch( Exception e )
         {
-            fail( "Se debió alquilar la película sin problemas" );
+            fail( "Se debiï¿½ alquilar la pelï¿½cula sin problemas" );
         }
     }
 
     /**
-     * Prueba la carga de las películas según el archivo de pruebas
+     * Prueba la carga de las pelï¿½culas segï¿½n el archivo de pruebas
      */
     public void testCargaCatalogo( )
     {
@@ -152,7 +159,7 @@ public class VideoTiendaTest extends TestCase
     }
 
     /**
-     * Prueba la búsqueda de películas existentes y no existentes
+     * Prueba la bï¿½squeda de pelï¿½culas existentes y no existentes
      */
     public void testBuscarPeliculas( )
     {
@@ -168,13 +175,13 @@ public class VideoTiendaTest extends TestCase
     }
 
     /**
-     * Prueba agregar copias a películas que existen y que no existen
+     * Prueba agregar copias a pelï¿½culas que existen y que no existen
      */
     public void testAgregarCopia( )
     {
         setupEscenario1( );
 
-        //Agrega copia a una película existente
+        //Agrega copia a una pelï¿½cula existente
         String titulo = "Buscando a Nemo";
         try
         {
@@ -187,24 +194,24 @@ public class VideoTiendaTest extends TestCase
         }
         catch( Exception e )
         {
-            fail( "La copia se debió agregar sin problemas" );
+            fail( "La copia se debiï¿½ agregar sin problemas" );
         }
 
-        //Agrega copia a una película no existente
-        titulo = "Película no existe";
+        //Agrega copia a una pelï¿½cula no existente
+        titulo = "Pelï¿½cula no existe";
         try
         {
             videotienda.agregarCopiaPelicula( titulo );
-            fail( "Debió fallar porque la película no existe" );
+            fail( "Debiï¿½ fallar porque la pelï¿½cula no existe" );
         }
         catch( Exception e )
         {
-            assertTrue( "La excepción se espera porque la película no existe", true );
+            assertTrue( "La excepciï¿½n se espera porque la pelï¿½cula no existe", true );
         }
     }
 
     /**
-     * Prueba la afiliación de clientes a la videotienda.
+     * Prueba la afiliaciï¿½n de clientes a la videotienda.
      */
     public void testAfiliarClientes( )
     {
@@ -223,7 +230,7 @@ public class VideoTiendaTest extends TestCase
     }
 
     /**
-     * Prueba la búsqueda de clientes que existen y que no existen
+     * Prueba la bï¿½squeda de clientes que existen y que no existen
      */
     public void testBuscarClientes( )
     {
@@ -234,7 +241,7 @@ public class VideoTiendaTest extends TestCase
         assertEquals( cliente2.darCedula( ), c.darCedula( ) );
         assertEquals( cliente2.darNombre( ), c.darNombre( ) );
         assertEquals( cliente2.darDireccion( ), c.darDireccion( ) );
-        assertEquals( 0, c.darNumeroAlquiladas( ) );
+        assertEquals( 0, c.darAlquiladas( ) );
         assertEquals( 0, c.darSaldo( ) );
 
         //Busca un cliente que no existe
@@ -257,12 +264,12 @@ public class VideoTiendaTest extends TestCase
         }
         catch( Exception e )
         {
-            assertTrue( "Se esperaba la excepción porque el monto es negativo", true );
+            assertTrue( "Se esperaba la excepciï¿½n porque el monto es negativo", true );
         }
     }
 
     /**
-     * Prueba el alquiler de una película a un cliente con saldo.
+     * Prueba el alquiler de una pelï¿½cula a un cliente con saldo.
      */
     public void testAlquilarPeliculaConSaldo( )
     {
@@ -280,12 +287,12 @@ public class VideoTiendaTest extends TestCase
         }
         catch( Exception e )
         {
-            fail( "Se debió alquilar la película sin problemas" );
+            fail( "Se debiï¿½ alquilar la pelï¿½cula sin problemas" );
         }
     }
 
     /**
-     * Prueba el alquiler de una película a un cliente sin saldo.
+     * Prueba el alquiler de una pelï¿½cula a un cliente sin saldo.
      */
     public void testAlquilarPeliculaSinSaldo( )
     {
@@ -297,12 +304,12 @@ public class VideoTiendaTest extends TestCase
         }
         catch( Exception e )
         {
-            assertTrue( "Esta excepción es esperada porque no tiene saldo", true );
+            assertTrue( "Esta excepciï¿½n es esperada porque no tiene saldo", true );
         }
     }
 
     /**
-     * Prueba la correcta devolución de la copia de un cliente
+     * Prueba la correcta devoluciï¿½n de la copia de un cliente
      */
     public void testDevolverCopiaExistente( )
     {
@@ -315,12 +322,12 @@ public class VideoTiendaTest extends TestCase
         }
         catch( Exception e )
         {
-            fail( "La copia se debió devolver sin problemas" );
+            fail( "La copia se debiï¿½ devolver sin problemas" );
         }
     }
 
     /**
-     * Prueba la incorrecta devolución de la copia de un cliente
+     * Prueba la incorrecta devoluciï¿½n de la copia de un cliente
      */
     public void testDevolverCopiaNoExistente( )
     {
@@ -328,35 +335,35 @@ public class VideoTiendaTest extends TestCase
         Cliente c = videotienda.buscarCliente( cliente1.darCedula( ) );
         Copia copia = ( Copia )c.darAlquiladas( ).get( 0 );
 
-        //Si el título está mal
+        //Si el tï¿½tulo estï¿½ mal
         try
         {
             videotienda.devolverCopia( "titulo no existente", copia.darCodigo( ), c.darCedula( ) );
-            fail( "Debió generar error" );
+            fail( "Debiï¿½ generar error" );
         }
         catch( Exception e )
         {
-            assertTrue( "Se esperaba por ser un título incorrecto", true );
+            assertTrue( "Se esperaba por ser un tï¿½tulo incorrecto", true );
         }
 
         try
         {
             videotienda.devolverCopia( copia.darTituloPelicula( ), 9999, c.darCedula( ) );
-            fail( "Debió generar error" );
+            fail( "Debiï¿½ generar error" );
         }
         catch( Exception e )
         {
-            assertTrue( "Se esperaba por ser un código incorrecto", true );
+            assertTrue( "Se esperaba por ser un cï¿½digo incorrecto", true );
         }
 
         try
         {
             videotienda.devolverCopia( copia.darTituloPelicula( ), copia.darCodigo( ), "00000" );
-            fail( "Debió generar error" );
+            fail( "Debiï¿½ generar error" );
         }
         catch( Exception e )
         {
-            assertTrue( "Se esperaba por ser una cédula incorrecta", true );
+            assertTrue( "Se esperaba por ser una cï¿½dula incorrecta", true );
         }
     }
 }
