@@ -139,16 +139,15 @@ public class VideoTienda
      * @param cedula C�dula del cliente. cedula != null.
      * @return el cliente correspondiente a la c�dula, o null si no hay un cliente con la c�dula dada.
      */
-    public Cliente buscarCliente( String cedula )
-    {
-    	//TODO implementar
-    	for (Cliente c : clientes) {
+    public Cliente buscarCliente(String cedula) {
+        for (Cliente c : clientes) {
             if (c.darCedula().equals(cedula)) {
                 return c;
             }
         }
-        return null;
+        return null; // Esto es esencial
     }
+
     
     
     /**
@@ -202,14 +201,17 @@ public class VideoTienda
      * @throws Exception Si el cliente no existe.
      * @throws Exception Si la recarga de saldo es menor que 0.
      */
-    public void cargarSaldoCliente( String cedula, int monto ) throws Exception
-    {
-    	//TODO implementar
-    	Cliente c = buscarCliente(cedula);
-        if (c != null) {
-            c.descargarSaldo(monto);
+    public void cargarSaldoCliente(String cedula, int monto) throws Exception {
+        if (monto < 0) {
+            throw new Exception("El monto a cargar no puede ser negativo");
+        }
+
+        Cliente cliente = buscarCliente(cedula);
+        if (cliente != null) {
+            cliente.cargarSaldo(monto);
         }
     }
+
 
     /**
      * Alquila una pel�cula a un cliente. <br>
